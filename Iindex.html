@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Weather App</title>
+    </head>
+    <body>
+        <header>
+            <h1>Weather App</h1>
+            <!--SEARCH BOX-->
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="France...">
+                <button type="submit" onclick="showWeather()">Search</button>
+            </div>
+            </header>
+                    <div class="container">
+
+            <!--SPINNER ANIMATION-->
+                            <div id="spinner"></div>
+            <div class="main-card" id="main-card">
+
+                <div class="main-info">
+                <!--left side-->
+                <div class="left-side">
+                <span id="city-name"></span>
+                <span id="date"></span>
+                <span id="temp"></span>
+                </div>
+                <!--right side-->
+                <div class="img-container">
+                <img id="main-icon" src="" alt="">
+                </div>
+                </div>
+                <span id="description"></span>
+                <!--START CARDS-->
+
+                <div class="details">
+                    <div class="cards">الرطوبة<span id="humidity">--</span></div>
+                    <div class="cards">الرياح<span id="wind">--</span></div>
+                   <div class="cards">الضغط<span id="pressure">--</span></div>
+                </div>
+                <!--END OF CARDS-->
+            </div>
+        </div>
+        <hr>
+        <section>
+            <h1>توقعات الخمس ايام القادمة</h1>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
