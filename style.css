@@ -39,6 +39,13 @@ header img {
     color: red;
     text-shadow:  0 0 10px black;
 }
+#not-found-msg{
+    font-size: 2rem;
+    letter-spacing: 3px;
+    display: none;
+    color: red;
+    text-shadow:  0 0 10px black;
+}
 .search-box{
     display: flex;
     margin-bottom: 20px;
@@ -261,6 +268,5 @@ footer{
             grid-template-columns: 230px;
             margin-left: 70px;
             }
-
 
         }

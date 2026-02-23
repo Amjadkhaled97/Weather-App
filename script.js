@@ -9,6 +9,7 @@ humidity = document.getElementById('humidity'),
 wind = document.getElementById('wind'),
 mainCard = document.getElementById('main-card'),
 errorNet = document.getElementById('error-internet'),
+notFound = document.getElementById('not-found-msg'),
 spinner = document.getElementById('spinner'),
 pressure = document.getElementById('pressure'),
 container = document.getElementById('container'),
@@ -28,6 +29,8 @@ async function getWeather(city){
     try{
     const response = await fetch(`${BASE_LINK}q=${city}&appid=${API_KEY}`);
     if(!response.ok){
+        notFound.style.display = 'block';
+        spinner.style.display ='none';
         throw new Error('Faild to fetching resources');
         
     }
@@ -37,7 +40,6 @@ async function getWeather(city){
 }
     catch(error){
         console.log(error.message);  
-        alert('Error In The Internet');
         return ;
     }
     
@@ -45,10 +47,11 @@ async function getWeather(city){
 
     async function showWeather(){
         if(input.value=='') return;
-        if(msg) msg.style.display = 'none';
-        if(errorNet.style.display='block')
+        if(msg) 
+            msg.style.display = 'none';
+        if(errorNet)
             errorNet.style.display='none';
-
+        if(notFound) notFound.style.display = 'none';
         if(mainCard.style.display ='grid') 
             mainCard.style.display = 'none';
        
@@ -116,6 +119,7 @@ async function getWeather(city){
         try{
         const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_KEY}`)
         if(!response.ok){
+            section.style.display = 'none';
             throw new Error(' faild feching forecast resoources!');
         }
         const data = await response.json();
@@ -173,6 +177,4 @@ async function getWeather(city){
         }
           forecastSkeleton.style.display = 'none';
     }
-
     
-

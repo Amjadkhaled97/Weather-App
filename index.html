@@ -15,7 +15,11 @@
             </div>
             
                     <div id="container">
-                        <div id="msg"><h1>Wellcome ,  You Can Search About Weather Of Any City</h1></div>
+                        <div id="msg"><h1>Wellcome ,  You Can Search About Weather Of Any City</h1>
+                        </div>
+                        <!--NOT FOUND MESSAGE 404-->
+                        <h2 id="not-found-msg" style="display: none;">The City Not Found Check The Name And Try Again</h2>
+                        <!--ERROR MESSAGE-->
                         <h2 id="error-internet">Error In The Internet! ,Please Try Again</h2>
             <!--SPINNER ANIMATION-->
                             <div id="spinner"></div>
@@ -47,7 +51,7 @@
         <hr>
         <section id="section" style="display: none;">
             
-            <h1>Weather Forecast For The Next Five Days</h1>
+            <h1 style="text-shadow: 0 0 5px black;">Weather Forecast For The Next Five Days</h1>
             <div id="forecastSkeleton" class="forecast-skeleton" style="display: none;">
                 <div class="skeleton-card"></div>
                 <div class="skeleton-card"></div>
@@ -68,5 +72,4 @@
         </footer>
         
     </body>
-
 </html>
