@@ -149,7 +149,7 @@ async function getWeather(city){
 
         //FILL INFO IN ITS PLACE
 
-        Icon.src = `https://openweathermap.org/img/wn/${dayData.weather[0].icon}@2x.png`;
+        Icon.src = `https://openweathermap.org/img/wn/${dayData.weather[0].icon}@4x.png`;
         Des.textContent = dayData.weather[0].description;
         Dtemp.textContent = Math.round(dayData.main.temp-273.15);
         dayCard.className = 'days-cards';
@@ -175,3 +175,4 @@ async function getWeather(city){
     }
 
     
+
