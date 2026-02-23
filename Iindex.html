@@ -3,19 +3,20 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="https://openweathermap.org/img/wn/02d@4x.png" type="image/x-icon">
         <title>Weather App</title>
     </head>
     <body>
         <header>
-            <h1>Weather App</h1>
-            <!--SEARCH BOX-->
+            <h1>Weather App <img src="https://openweathermap.org/img/wn/02d@4x.png" alt="icon"></h1></header>
             <div class="search-box">
                 <input type="text" id="search-input" placeholder="France...">
                 <button type="submit" onclick="showWeather()">Search</button>
             </div>
-            </header>
-                    <div class="container">
-
+            
+                    <div id="container">
+                        <div id="msg"><h1>Wellcome ,  You Can Search About Weather Of Any City</h1></div>
+                        <h2 id="error-internet">Error In The Internet! ,Please Try Again</h2>
             <!--SPINNER ANIMATION-->
                             <div id="spinner"></div>
             <div class="main-card" id="main-card">
@@ -23,13 +24,13 @@
                 <div class="main-info">
                 <!--left side-->
                 <div class="left-side">
-                <span id="city-name"></span>
-                <span id="date"></span>
-                <span id="temp"></span>
+                <span id="city-name">--</span>
+                <span id="date">--</span>
+                <span id="temp">--</span>
                 </div>
                 <!--right side-->
                 <div class="img-container">
-                <img id="main-icon" src="" alt="">
+                <img id="main-icon" src="" alt="no photo">
                 </div>
                 </div>
                 <span id="description"></span>
@@ -44,9 +45,27 @@
             </div>
         </div>
         <hr>
-        <section>
+        <section id="section" style="display: none;">
+            
             <h1>توقعات الخمس ايام القادمة</h1>
+            <div id="forecastSkeleton" class="forecast-skeleton" style="display: none;">
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+                <div class="skeleton-card"></div>
+            </div>
+            <div id="days-container">
+                <div id=""></div>
+            </div>
         </section>
+
+
         <script src="script.js"></script>
+
+        <footer>
+            <p>Prowded By Amjad Khaled</p>
+        </footer>
+        
     </body>
 </html>

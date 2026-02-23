@@ -5,19 +5,39 @@
 }
 body{
     height: 100vh;
-    background: linear-gradient(135deg,rgb(23, 23, 99),rgb(83, 83, 198));
     color: white;
+     background-image: url('background-image.avif');
+    background-size: cover;
+}
+header{
+    
 }
 header h1{
     padding: 10px;
+    
 }
-.container{
+header img {
+    width: 45px;
+    transform: translateY(10px);
+}
+#msg{
+    text-shadow: 0 0 10px black;
+}
+#container{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px;
     height: 400px;
     width: 100%;
+   
+}
+#error-internet{
+    font-size: 2rem;
+    letter-spacing: 3px;
+    display: none;
+    color: red;
+    text-shadow:  0 0 10px black;
 }
 .search-box{
     display: flex;
@@ -51,15 +71,13 @@ header h1{
 }
 .main-card{
     width: 40%;
+    display: none;
     height: 300px;
     padding: 10px;
-    display: grid;
-    border: 2px solid black;
+    border: none;
     grid-template-rows: repeat(3,1fr);
-    background-color: rgb(76, 72, 198);
+    background-color: rgb(53, 123, 230);
     border-radius: 8px;
-    z-index: 0;
-    display: none;
 }
 .main-info{
     display: flex;
@@ -89,9 +107,9 @@ header h1{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border: 4px solid rgb(81, 23, 182);
+    border: 4px solid rgb(226, 238, 68);
     border-bottom-color: transparent;
-    animation: spin 1.2s infinite linear;
+    animation: spin 2s infinite linear;
     z-index: 99999;
  }
 #description{
@@ -114,16 +132,133 @@ header h1{
     padding: 20px;
     width: 100px;
     height: 100px;
-    background-color: rgb(39, 39, 119);
+    background-color: rgb(64, 64, 86);
 }
-section{
+
+
+
+section {
     text-align: center;
 }
+section h1{
+    margin-top: 20px;
+}
+#days-container{
+ margin: 15px;
+ margin-top: 50px;
+ padding: 10px;
+ display: flex;
+ flex-direction: row;
+ gap: 10px;
+}
+.days-cards{
+    backdrop-filter: blur(10px);
+    color: yellow;
+    text-shadow: 0 0 10px black;
+    border-radius: 8px;
+    width: 20%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: larger;
+    border: 2px solid white;
+}
+.days-cards img{
+margin: 0 2px;
+width: 90%;
+height: auto;
+}
+
+.forecast-skeleton{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skeleton-card{
+    background: linear-gradient(90deg,#f0f0f0 25%,#e0e0e0 50%,#f0f0f0 75%);
+    background-size: 200% 100%;
+    border-radius: 10px;
+    height: 150px;
+    animation: loading 1.5s infinite;
+}   
+footer{
+    margin-top: 40px;
+    padding: 50px;
+    text-align: center;
+    text-shadow: 0 0 8px black;
+}
+
+
+        /*ANIMETION KEY FRAMES*/
+
+
 @keyframes spin{
    0%{
     transform:  rotate(0);
    }
+    25%{
+        transform: rotate(90deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    75%{
+        transform: rotate(90deg);
+    }
     100%{
-        transform: rotate(360deg)  ;
+        transform: rotate(0deg);
     }
 }
+
+@keyframes loading {
+    0%{
+        background-position: 200% 0;
+    }
+    100%{
+        background-position: -200% 0;
+    }
+}
+
+        /*========MEDIA=======*/
+
+        @media (max-width:400px){
+            .search-box input {
+                width: 75%;
+            }
+
+            #container{
+                padding: 10px;
+                margin-bottom: 30px;
+            }
+            #container .main-card {
+                width: 100%;
+                height: 400px;
+                
+            }
+            #error-internet{
+                text-align: center;
+            }
+
+
+            #days-container{
+                flex-direction: column;
+                align-items: center;
+            }
+            .days-cards{
+                width: 75%;
+                height: 300px;
+                font-size: large;
+            }
+            .days-cards img{
+                width: 80%;
+                margin-left: 10%;
+            }
+            .forecast-skeleton{
+            grid-template-columns: 230px;
+            margin-left: 70px;
+            }
+
+        }
