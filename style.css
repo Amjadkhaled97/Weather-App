@@ -166,7 +166,8 @@ section h1{
 }
 .days-cards img{
 margin: 0 2px;
-width: 90%;
+width: 70%;
+margin-left: 15%;
 height: auto;
 }
 
@@ -260,5 +261,6 @@ footer{
             grid-template-columns: 230px;
             margin-left: 70px;
             }
+
 
         }
